@@ -1,0 +1,13 @@
+// @import "components/layout";
+// @import "components/typography";
+// @import "components/buttons";
+// @import "components/card";
+// @import "components/animal-grid";
+// @import "components/loader";
+// @import "components/avatar";
+// @import "components/colors";
+
+$background-color: lightgreen;
+body {
+  background-color: $background-color;
+}

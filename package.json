@@ -1,0 +1,42 @@
+{
+  "name": "deploying-angularjs-screencast",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.3.12",
+    "browser-sync": "^1.9.2",
+    "chai": "^1.10.0",
+    "event-stream": "^3.1.7",
+    "express": "^4.10.6",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^1.5.0",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-concat": "^2.4.2",
+    "gulp-csso": "^0.2.9",
+    "gulp-html-replace": "^1.4.1",
+    "gulp-jshint": "^1.12.0",
+    "gulp-ng-annotate": "^0.4.3",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.0.2",
+    "gzippo": "^0.2.0",
+    "jshint-stylish": "^1.0.2",
+    "karma": "^0.12.37",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^2.5.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^2.0.1"
+  }
+}
