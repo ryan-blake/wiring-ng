@@ -25,8 +25,8 @@ angular.module('packt')
     }
 
     Arena.calculateTerrainInfluence = function(animal, terrain) {
-      var landInfluence = animal.stats.land / terrain.stats.land;
-      var waterInfluence = animal.stats.water / animal.stats.water;
+      var landInfluence = animal.stats.land * (terrain.stats.land /  10);
+      var waterInfluence = animal.stats.water * (animal.stats.water / 10);
 
       return (landInfluence + waterInfluence ) / 20;
     };
@@ -36,7 +36,25 @@ angular.module('packt')
       var terrainScore = Arena.calculateTerrainInfluence(animal, terrain);
 
       return combatScore * terrainScore;
+    };
+
+    Arena.determineWinner = function(playerAnimal, opponentAnimal, terrain) {
+      var playerScore = Arena.calculateTotalScore(playerAnimal, terrain);
+      var opponentScore = Arena.calculateTotalScore(opponentAnimal, terrain);
+      var outcome;
+
+      if (playerScore === opponentScore) {
+        outcome = 'draw';
+      } else {
+        outcome = playerScore > opponentScore ? 'player' : 'opponent';
+      }
+
+      return outcome;
+
     }
+
+
+
   });
 
 // 'use strict';

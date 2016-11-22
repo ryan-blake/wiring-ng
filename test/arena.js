@@ -8,7 +8,7 @@ describe('Arena', function (){
   });
 
 
-  describe('Mathcup Generation', function() {
+  describe('Matchup Generation', function() {
       it('it should generate a matchup with an opponent and terrain', inject(function (Arena){
         var matchup = Arena.generateMatchup();
         matchup.opponent.should.exist();
@@ -19,7 +19,6 @@ describe('Arena', function (){
   describe('Scoring', function(){
 
     beforeEach(inject(function (Animals, Terrains){
-
       this.rhino = Animals.find('rhino');
       this.alligator = Animals.find('alligator');
       this.swamp = Terrains.find('swamp');
@@ -41,7 +40,28 @@ describe('Arena', function (){
       totalScore.should.be.gte(0).and.lte(10);
     }));
 
-  })
+  });
+
+
+  describe('Scoring', function(){
+
+    beforeEach(inject(function (Animals, Terrains){
+      this.rhino = Animals.find('rhino');
+      this.alligator = Animals.find('alligator');
+      this.swamp = Terrains.find('swamp');
+    }));
+
+    it('should determine a winner if the matchup is not equal', inject(function(Arena){
+      var outcome = Arena.determineWinner(this.alligator, this.rhino, this.swamp);
+      outcome.should.equal('player');
+    }));
+
+
+    it('should determine a draw if the matchup is equal', inject(function (Arena){
+      var outcome = Arena.determineWinner(this.rhino, this.rhino, this.swamp);
+      (outcome.should.equal('draw'))
+    }));
+  });
 
 
 });
