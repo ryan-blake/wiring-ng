@@ -98,15 +98,15 @@ gulp.task('htmlreplace', function () {
 });
 
 
-gulp.task('bundle:vendor', function() {
-  return gulp.src([
-    'src/bower_components/angular/angular.min.js',
-    'src/bower_components/angular-local-storage/dist/angular-local-storage.min.js',
-    'src/bower_components/angular-ui-router/release/angular-ui-router.min.js'
-  ])
-  .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('dist/scripts.js'));
-});
+// gulp.task('bundle:vendor', function() {
+//   return gulp.src([
+//     'src/bower_components/angular/angular.min.js',
+//     'src/bower_components/angular-local-storage/dist/angular-local-storage.min.js',
+//     'src/bower_components/angular-ui-router/release/angular-ui-router.min.js'
+//   ])
+//   .pipe(concat('vendor.js'))
+//     .pipe(gulp.dest('dist/scripts.js'));
+// });
 
 gulp.task('bundle:source', function () {
 
@@ -136,15 +136,15 @@ gulp.task('copy:styles', ['sass'],function() {
 
 gulp.task('build', ['htmlreplace', 'bundle:source', 'bundle:vendor', 'copy:styles']);
 //
-// gulp.task('bundle:vendor', function () {
-//   return gulp.src([
-//     'src/bower_components/angular/angular.min.js',
-//     'src/bower_components/angular-local-storage/dist/angular-local-storage.min.js',
-//     'src/bower_components/angular-ui-router/release/angular-ui-router.min.js'
-//   ])
-//     .pipe(concat('vendor.js'))
-//     .pipe(gulp.dest('dist/scripts'));
-// });
+gulp.task('bundle:vendor', function () {
+  return gulp.src([
+    'src/bower_components/angular/angular.min.js',
+    'src/bower_components/angular-local-storage/dist/angular-local-storage.min.js',
+    'src/bower_components/angular-ui-router/release/angular-ui-router.min.js'
+  ])
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('dist/scripts'));
+});
 //
 // gulp.task('copy:styles', ['sass'], function () {
 //   gulp.src('src/styles/app.css')
