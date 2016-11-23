@@ -14,7 +14,7 @@
     "browser-sync": "^1.9.2",
     "chai": "^1.10.0",
     "event-stream": "^3.3.4",
-    "express": "^4.10.6",
+    "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^1.9.1",
     "gulp-autoprefixer": "^2.3.1",
