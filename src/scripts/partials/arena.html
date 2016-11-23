@@ -1,4 +1,40 @@
 <div class="loader" ng-show="!arena.matchup">
+  Generating matchup..
+</div>
+<div ng-show="arena.matchup && !arena.matchWinner">
+  <div animal-card="arena.matchup.opponent"></div>
+  <div terrain-card="arena.matchup.terrain"></div>
+
+
+  <h3> choose your animal </h3>
+  <div animal-grid></div>
+
+  <div ng-show="arena.playerAnimal">
+    <p>
+      You are fighting as a {{ arena.playerAnimal.name }} against a {{ arena.opponentAnimal.name }} in {{arena.matchup.terrain.name}}.
+    </p>
+
+    <button ng-click="arena.fightMatch()">fight match</button>
+
+
+  </div>
+
+
+</div>
+<div ng-show="arena.matchWinner">
+  <p ng-show="arena.matchWinner === 'player'">You Won!</p>
+  <p ng-show="arena.matchWinner === 'opponent'">You lost!</p>
+  <p ng-show="arena.matchWinner === 'draw'">Draw!</p>
+
+  <button ng-click="arena.resetMatch()">Reset Game</button>
+</div>
+<div ng-show="arena.matchup">
+  <a class="btn" ui-sref="dashboard">Match Dashboard</a>
+</div>
+
+
+<!--
+ <div class="loader" ng-show="!arena.matchup">
   Generating matchup...
 </div>
 <div ng-show="arena.matchup && !arena.matchWinner && !arena.playerAnimal">
@@ -34,4 +70,4 @@
   </div>
 
   <button class="btn" ng-click="arena.resetMatch()">Play again</button>
-</div>
+</div> -->

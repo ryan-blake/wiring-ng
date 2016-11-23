@@ -1,4 +1,4 @@
-<div class="avatar">
+<!-- <div class="avatar">
   <img ng-src="images/{{ terrain.id }}.png" class="avatar-image" alt="{{ dashboard.terrains.find(terrain).name }}"/>
   <div class="avatar-content">
     <div class="avatar-title">
@@ -18,4 +18,15 @@
       <span class="label">water</span>
     </li>
   </ul>
+</div> -->
+
+<div class="card terrain">
+  <div class="photo">
+    <img ng-src="images/{{ terrain.id }}.png" alt=""/>
+  </div>
 </div>
+<div class="name"> {{ terrain.name }}</div>
+<ul class="stats">
+  <li>{{ terrain.stats.land }} land</li>
+  <li>{{ terrain.stats.water }} water</li>
+</ul>

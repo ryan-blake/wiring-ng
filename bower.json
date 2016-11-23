@@ -17,7 +17,7 @@
     "angular": "^1.5.8",
     "angular-local-storage": "^0.5.2",
     "angular-mocks": "^1.5.8",
-    "angular-ui-router": "~0.2.13"
+    "angular-ui-router": "^0.3.2"
   },
   "description": "",
   "main": "",

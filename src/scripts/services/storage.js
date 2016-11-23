@@ -1,31 +1,15 @@
-// 'use strict';
-//
-// angular.module('packt')
-//   .service('Storage', function (localStorageService) {
-//
-//     var Storage = this;
-//
-//     Storage.save = function (key, data) {
-//       localStorageService.set(key, data);
-//     };
-//
-//     Storage.load = function (key) {
-//       return localStorageService.get(key);
-//     };
-//
-//   });
+'use strict';
 
-'use strict'
 angular.module('packt')
-  .service('Storage', function(localStorageService){
+  .service('Storage', function (localStorageService) {
 
-    var Storage =  this;
+    var Storage = this;
 
-    Storage.save = function(key, data) {
+    Storage.save = function (key, data) {
       localStorageService.set(key, data);
     };
 
-    Storage.load = function(key) {
+    Storage.load = function (key) {
       return localStorageService.get(key);
     };
 
