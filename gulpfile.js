@@ -35,6 +35,14 @@ gulp.task('serve', ['watch'], function(){
     }
   });
 });
+
+gulp.task('serve:dist', function(){
+  browserSync({
+    server: {
+        baseDir: './dist'
+    }
+  });
+});
 //
 // gulp.task('serve', ['watch'], function () {
 //   browserSync({
@@ -125,6 +133,8 @@ gulp.task('copy:styles', ['sass'],function() {
     .pipe(csso())
     .pipe(gulp.dest('dist/styles'));
 })
+
+gulp.task('build', ['htmlreplace', 'bundle:source', 'bundle:vendor', 'copy:styles']);
 //
 // gulp.task('bundle:vendor', function () {
 //   return gulp.src([
